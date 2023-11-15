@@ -1,0 +1,30 @@
+<html> 
+<title> Lucas Series </title>
+<head>
+<link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body class="bgclass">
+<div class="class1">
+<form id="lucas" method="get" action="http://ec2-52-37-54-12.us-west-2.compute.amazonaws.com/lucas/">
+<h1 align="center"> Enter the number of rows for lucas series </h1>
+<input type="number" name="num" id="nrows" required>
+<button type="submit"> Submit </button>
+</div>
+</form>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type='text/javascript'>
+$(document).ready(function() {
+  $("#lucas").submit(function(e){
+      e.preventDefault();
+      var $form = $( this ),
+          url = $form.attr( 'action' ) + $('#nrows').val(); 
+      var posting = $.get( url);
+      posting.done(function( data ) {
+        $("body").html('<html><head></head><body><span><h1 style="color:white">lucas series is' +data.lucas +'</h1></span></body></html>');
+});
+});
+});
+</script>
+</body>
+</html>
