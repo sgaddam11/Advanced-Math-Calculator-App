@@ -1,5 +1,5 @@
 
-# Adnaced Math Calculator Flask Web Application
+# Advanced Math Calculator Flask Web Application
 This web service provides the user with   
     1. Lucas series,   
     2. Fibonacci series,   
